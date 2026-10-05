@@ -24,7 +24,7 @@ namespace Otel_sistemi
         {
             InitializeComponent();
 
-            // Timer-in hər saniyə işləməsi üçün bu əlaqə mütləqdir:
+           
             timer1.Tick += timer1_Tick;
         }
 
@@ -32,7 +32,7 @@ namespace Otel_sistemi
         {
         }
 
-        // Bütün otaqlar üçün ortaq rezervasiya və yoxlama funksiyası (Dəqiqə ilə işləyir)
+       
         private void RezervEt(Button btn, ref int sure, Label lbl, string deqiqeText)
         {
             if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(deqiqeText))
@@ -43,11 +43,11 @@ namespace Otel_sistemi
 
             if (int.TryParse(deqiqeText, out int deqiqe))
             {
-                sure = deqiqe * 60; // Daxil edilən dəqiqəni saniyəyə çeviririk (məsələn: 1 dəq = 60 saniyə)
+                sure = deqiqe * 60;
                 btn.Enabled = false;
                 btn.BackColor = Color.Red;
 
-                // Xanaları təmizləyirik
+                
                 textBox1.Clear();
                 textBox2.Clear();
 
@@ -60,19 +60,19 @@ namespace Otel_sistemi
             }
         }
 
-        // Otaq 1 -> button4 -> label3
+       
         private void button4_Click(object sender, EventArgs e)
         {
             RezervEt(button4, ref otaq1_sure, label3, textBox2.Text);
         }
 
-        // Otaq 2 -> button5 -> label4
+       
         private void button5_Click(object sender, EventArgs e)
         {
             RezervEt(button5, ref otaq2_sure, label4, textBox2.Text);
         }
 
-        // Otaq 3 -> button6 -> label5
+        
         private void button6_Click(object sender, EventArgs e)
         {
             RezervEt(button6, ref otaq3_sure, label5, textBox2.Text);
@@ -83,7 +83,7 @@ namespace Otel_sistemi
             RezervEt(button6, ref otaq3_sure, label5, textBox2.Text);
         }
 
-        // Otaq 4 -> button1 -> label8
+       
         private void button1_Click(object sender, EventArgs e)
         {
             RezervEt(button1, ref otaq4_sure, label8, textBox2.Text);
@@ -94,7 +94,7 @@ namespace Otel_sistemi
             RezervEt(button1, ref otaq4_sure, label8, textBox2.Text);
         }
 
-        // Otaq 5 -> button2 -> label6
+        
         private void button2_Click(object sender, EventArgs e)
         {
             RezervEt(button2, ref otaq5_sure, label6, textBox2.Text);
@@ -105,7 +105,7 @@ namespace Otel_sistemi
             RezervEt(button2, ref otaq5_sure, label6, textBox2.Text);
         }
 
-        // Otaq 6 -> button3 -> label7
+        
         private void button3_Click(object sender, EventArgs e)
         {
             RezervEt(button3, ref otaq6_sure, label7, textBox2.Text);
@@ -116,7 +116,7 @@ namespace Otel_sistemi
             RezervEt(button3, ref otaq6_sure, label7, textBox2.Text);
         }
 
-        // Hər saniyə bütün otaqların vaxtlarını yoxlayıb geriyə saydıran Timer
+        
         private void timer1_Tick(object sender, EventArgs e)
         {
             // Otaq 1
@@ -132,7 +132,7 @@ namespace Otel_sistemi
                 }
             }
 
-            // Otaq 2
+          
             if (otaq2_sure > 0)
             {
                 otaq2_sure--;
@@ -145,7 +145,7 @@ namespace Otel_sistemi
                 }
             }
 
-            // Otaq 3
+           
             if (otaq3_sure > 0)
             {
                 otaq3_sure--;
@@ -158,7 +158,7 @@ namespace Otel_sistemi
                 }
             }
 
-            // Otaq 4
+            
             if (otaq4_sure > 0)
             {
                 otaq4_sure--;
@@ -171,7 +171,7 @@ namespace Otel_sistemi
                 }
             }
 
-            // Otaq 5
+           
             if (otaq5_sure > 0)
             {
                 otaq5_sure--;
@@ -184,7 +184,7 @@ namespace Otel_sistemi
                 }
             }
 
-            // Otaq 6
+           
             if (otaq6_sure > 0)
             {
                 otaq6_sure--;
