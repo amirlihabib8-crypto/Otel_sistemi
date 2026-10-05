@@ -12,7 +12,7 @@ namespace Otel_sistemi
 {
     public partial class Form1 : Form
     {
-        // Hər otaq üçün saniyə dəyişənləri
+        
         int otaq1_sure = 0;
         int otaq2_sure = 0;
         int otaq3_sure = 0;
@@ -119,7 +119,7 @@ namespace Otel_sistemi
         
         private void timer1_Tick(object sender, EventArgs e)
         {
-            // Otaq 1
+           
             if (otaq1_sure > 0)
             {
                 otaq1_sure--;
